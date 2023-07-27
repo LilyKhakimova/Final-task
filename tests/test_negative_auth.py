@@ -1,10 +1,10 @@
-# Тесты группы "Авторизация. Негативные тесты" - вход в личный кабинет
-# Проверка авторизации с пустым телефоном/емейлом/логином/личевым счетом
-# Проверка авторизации с правильным телефоном/емейлом/логином/личевым счетом и пустым паролем
+# Тесты группы "Авторизация. Негативные тесты" - вход в ЛК
+# Проверка авторизации с пустым телефоном/емейлом/логином/ЛС
+# Проверка авторизации с правильным телефоном/емейлом/логином/ЛС и пустым паролем
 # Ввод некорректного номера телефона
 # Ввод некорректного емейла
-# Вход с верным телефоном/емейлом/логином/личевым счетом и неверным паролем
-# Вход с неверным телефоном/емейлом/логином/личевым счетом и верным паролем
+# Вход с верным телефоном/емейлом/логином/ЛС и неверным паролем
+# Вход с неверным телефоном/емейлом/логином/ЛС и верным паролем
 
 
 import pytest
@@ -35,7 +35,7 @@ def test_auth_by_empty_phone(phone, web_browser):
     # Нажимаем кнопку "Войти"
     page.btn_click()
 
-    assert link_lk not in web_browser.current_url, f"AT-006 failed: Выполнен вход в личный кабинет"
+    assert link_lk not in web_browser.current_url, f"AT-006 failed: Выполнен вход в ЛК"
     # Появляется надпись "Введите номер телефона"
     assert web_browser.find_element(By.CSS_SELECTOR, "span.rt-input-container__meta.rt-input-container__meta--error").text == 'Введите номер телефона', "AT-006 failed: нет предупреждения о пустом номере телефона"
 
@@ -158,7 +158,7 @@ def test_auth_by_username_and_empty_password(username, passwd, test_num, web_bro
 
 @pytest.mark.parametrize("username, test_num", [
                                 ('+7(999)9999999', "AT-008"),
-                                ("testovich.1984@internet.ru", "AT-014")
+                                ("romashka2003@gmail.com", "AT-014")
                             ], ids= [
                                 "Wrong phone number",
                                 "Wrong email"
@@ -213,7 +213,7 @@ def test_auth_by_wrong_password(username, passwd, test_num, web_browser):
     assert web_browser.find_element(By.ID, "form-error-message").text == 'Неверный логин или пароль', f"{test_num} failed: Нет надписи 'Неверный логин или пароль'"
 
 
-@pytest.mark.parametrize("phone", ['+7(911)2440566'], ids= ["Not correct numb"])
+@pytest.mark.parametrize("phone", ['+7(977)561260'], ids= ["Not correct numb"])
 def test_auth_by_bad_format_phone(phone, web_browser):
     """ Тест-кейс AT-010: попытка авторизации по номеру телефона в неверном формате"""
 
