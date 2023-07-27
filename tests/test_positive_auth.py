@@ -1,4 +1,4 @@
-# Тесты группы "Авторизация. Позитивные тесты" - вход в личный кабинет
+# Тесты группы "Авторизация. Позитивные тесты" - вход в ЛК
 
 import pytest
 from selenium.webdriver.support.ui import WebDriverWait
@@ -30,7 +30,7 @@ def test_auth_by_phone(web_browser):
     # Нажимаем кнопку "Войти"
     page.btn_click()
 
-    # Явное ожидание загрузки элемента div.home-container - внешний контейнер в личный кабинет
+    # Явное ожидание загрузки элемента div.home-container - внешний контейнер в ЛК
     WebDriverWait(web_browser, 10).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, 'div.home-container'))
     )
@@ -62,7 +62,7 @@ def test_auth_by_email(web_browser):
     # Нажимаем кнопку "Войти"
     page.btn_click()
 
-    # Явное ожидание загрузки элемента div.home-container - внешний контейнер в личный кабинет
+    # Явное ожидание загрузки элемента div.home-container - внешний контейнер в ЛК
     WebDriverWait(web_browser, 10).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, 'div.home-container'))
     )
@@ -95,7 +95,7 @@ def test_auth_by_login(web_browser):
     # Нажимаем кнопку "Войти"
     page.btn_click()
 
-    # Явное ожидание загрузки элемента div.home-container - внешний контейнер в личный кабинет
+    # Явное ожидание загрузки элемента div.home-container - внешний контейнер в ЛК
     WebDriverWait(web_browser, 10).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, 'div.home-container'))
     )
@@ -128,7 +128,7 @@ def test_auth_by_ls(web_browser):
     # Нажимаем кнопку "Войти"
     page.btn_click()
 
-    # Явное ожидание загрузки элемента div.home-container - внешний контейнер в личный кабинет
+    # Явное ожидание загрузки элемента div.home-container - внешний контейнер в ЛК
     WebDriverWait(web_browser, 10).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, 'div.home-container'))
     )
@@ -175,7 +175,7 @@ def test_auth_in_any_tab(username, username_title, web_browser):
     # Нажимаем кнопку "Войти"
     page.btn_click()
 
-    # Явное ожидание загрузки элемента div.home-container - внешний контейнер в личный кабинет
+    # Явное ожидание загрузки элемента div.home-container - внешний контейнер в ЛК
     WebDriverWait(web_browser, 10).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, 'div.home-container'))
     )
