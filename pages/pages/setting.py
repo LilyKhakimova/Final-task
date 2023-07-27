@@ -1,0 +1,10 @@
+valid_email = 'testovich.1984@internet.ru'
+valid_phone = '+7(911)2440566'
+valid_password = 'SqbM2@Lp'
+valid_login = 'testovich1984'
+valid_ls = '123456789098'
+valid_username = u"Тест Тестович"
+ad_slogan = u"Персональный помощник в цифровом мире Ростелекома"
+site = 'https://b2c.passport.rt.ru'
+link_lk = "/account_b2c/page"
+drv_path = '../../ChromeDrv/chromedriver.exe'
